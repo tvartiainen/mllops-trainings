@@ -1,0 +1,10 @@
+name: My App
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  call-workflow-in-local-repo:
+    uses: .github/workflows/02-manual-trigger-job.yml@v1
