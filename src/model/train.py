@@ -12,13 +12,13 @@ from sklearn.linear_model import LogisticRegression
 # define functions
 def main(args):
     # TO DO: enable autologging
-    mlflow.autolog()
+    mlflow.autolog()  # noqa: F821
 
     # read data
     df = get_csvs_df(args.training_data)
 
     # split data
-    X_train, X_test, y_train, y_test = split_data(df)
+    X_train, X_test, y_train, y_test = split_data(df)  # noqa: F821
 
     # train model
     train_model(args.reg_rate, X_train, X_test, y_train, y_test)
@@ -63,12 +63,15 @@ if __name__ == "__main__":
     print("\n\n")
     print("*" * 60)
 
+    
     # parse args
     args = parse_args()
 
+    
     # run main function
     main(args)
 
+    
     # add space in logs
     print("*" * 60)
     print("\n\n")
