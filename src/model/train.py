@@ -3,7 +3,6 @@
 import argparse
 import glob
 import os
-import mlfow
 import pandas as pd
 
 from sklearn.linear_model import LogisticRegression
@@ -12,13 +11,13 @@ from sklearn.linear_model import LogisticRegression
 # define functions
 def main(args):
     # TO DO: enable autologging
-    mlflow.autolog()
+    mlflow.autolog()  # noqa: F821
 
     # read data
     df = get_csvs_df(args.training_data)
 
     # split data
-    X_train, X_test, y_train, y_test = split_data(df) # noqa: F821
+    X_train, X_test, y_train, y_test = split_data(df)  # noqa: F821
 
     # train model
     train_model(args.reg_rate, X_train, X_test, y_train, y_test)
@@ -59,8 +58,8 @@ def parse_args():
 
 # run script
 if __name__ == "__main__":
-    # add space in logs
 
+    # add space in logs
     print("\n\n")
     print("*" * 60)
 
